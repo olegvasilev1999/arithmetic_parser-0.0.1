@@ -3,37 +3,40 @@
 
 
 
-#include "stdafx.h"
+#include "stdafx.h" 
 #include "iostream"
 
 using namespace std;
 
-int main()
-{
+int main() {
 
-	char oper;
-	int a, b ;
+	char oper ;
+	int a, b;
 
+	cin >> a >> oper;
+	if (oper == '<' || oper == '>') {
+		cin >> oper >> b;
+	}
+	else {
+		cin >> b;
+	}
 
-	cin >> a >> oper >> b;
 
 	switch (oper) {
-	case '+': cout  << (int)(a + b) <<endl; break;
-	case '-': cout   << (int)(a - b) << endl; break;
-	case '*': cout   << (int)(a * b) << endl; break;
-	case '/': cout  << (double)(a / b) << endl; break;
-	case '%': cout << (int)(a % b )<< endl; break;
-	case '&': cout  << (int)(a % b) << endl; break;
-	case '|': cout  << (int)(a | b) << endl; break;
-	case '^': cout  << (int)(a ^ b) << endl; break;
-	case '>': cout  << (int)(a >> b) << endl; break;
-	case '<': cout  << (int)(a << b) << endl; break;
+	case '+': cout << (int)(a + b) << endl; break;
+	case '-': cout << (int)(a - b) << endl; break;
+	case '*': cout << (int)(a * b) << endl; break;
+	case '/': cout << (double)(a / b) << endl; break;
+	case '%': cout << (int)(a % b) << endl; break;
+	case '&': cout << (int)(a % b) << endl; break;
+	case '|': cout << (int)(a | b) << endl; break;
+	case '^': cout << (int)(a ^ b) << endl; break;
+	case '>': cout << (int)(a >> b) << endl; break;
+	case '<': cout << (int)(a << b) << endl; break;
 	}
 
 	system("pause");
 	cin.get();
-	
-	return 0;
-	
 
+	return 0;
 }
