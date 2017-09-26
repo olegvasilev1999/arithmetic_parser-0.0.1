@@ -10,30 +10,37 @@ using namespace std;
 
 int main() {
 
-	char oper ;
+	char oper,op ;
 	int a, b;
 
 	cin >> a >> oper;
+
 	if (oper == '<' || oper == '>') {
-		cin >> oper >> b;
+		cin >> op >> b;
+		if ( oper == '<' && op == '<' ) {
+		 cout << (int)(a << b) << endl; 	
+		}
+		else if (oper == '>' && op == '>') {
+			cout << (int)(a >> b) << endl;
+		}
+		else cout << "ERROR";
+	
 	}
-	else {
-		cin >> b;
-	}
-
-
-	switch (oper) {
-	case '+': cout << (int)(a + b) << endl; break;
-	case '-': cout << (int)(a - b) << endl; break;
-	case '*': cout << (int)(a * b) << endl; break;
-	case '/': cout << (double)(a / b) << endl; break;
-	case '%': cout << (int)(a % b) << endl; break;
-	case '&': cout << (int)(a % b) << endl; break;
-	case '|': cout << (int)(a | b) << endl; break;
-	case '^': cout << (int)(a ^ b) << endl; break;
-	case '>': cout << (int)(a >> b) << endl; break;
-	case '<': cout << (int)(a << b) << endl; break;
-	}
+		else {
+			cin >> b;
+			
+			switch (oper) {
+		case '+': cout << (int)(a + b) << endl; break;
+		case '-': cout << (int)(a - b) << endl; break;
+		case '*': cout << (int)(a * b) << endl; break;
+		case '/': cout << (double)(a / b) << endl; break;
+		case '%': cout << (int)(a % b) << endl; break;
+		case '&': cout << (int)(a % b) << endl; break;
+		case '|': cout << (int)(a | b) << endl; break;
+		case '^': cout << (int)(a ^ b) << endl; break;
+			default: cout << "ERROR";
+		}
+		}
 
 	system("pause");
 	cin.get();
